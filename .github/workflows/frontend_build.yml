@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -29,7 +29,7 @@ jobs:
     - run: npm run build --if-present
 
   docker:
-    if: github.ref == 'refs/heads/master' # Running this job only for master branch
+    if: github.ref == 'refs/heads/main' # Running this job only for master branch
 
     steps:
       - uses: actions/checkout@v2 # Checking out the repo
