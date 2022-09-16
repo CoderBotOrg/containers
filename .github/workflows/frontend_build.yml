@@ -25,6 +25,7 @@ jobs:
         path: frontend/source
         name: CoderBotOrg/frontend
         ref: refs/heads/main    
+    - run: cd frontend/source
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
