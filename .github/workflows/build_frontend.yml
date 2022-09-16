@@ -67,6 +67,6 @@ jobs:
       with:
           push: true
           platforms: linux/arm/v7
-          tags: frontend:latest
+          tags: coderbotorg/containers/frontend:latest
           context: frontend
 
