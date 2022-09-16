@@ -66,6 +66,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
           push: true
+          platforms: linux/arm/v7
           tags: frontend:latest
           context: frontend
 
