@@ -39,7 +39,7 @@ jobs:
 
   release-frontend:
     runs-on: ubuntu-latest
-    needs: build
+    needs: build-frontend
     steps:
     - uses: actions/checkout@v2 # Checking out the repo
     - name: Download dist artifact
