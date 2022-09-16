@@ -19,14 +19,21 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+    - uses: actions/checkout@v3
+      with:
+        path: frontend/source
+        name: CoderBotOrg/frontend
+        ref: refs/heads/master    
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+      working-directory: frontend/source
     - run: npm run build --if-present
+      working-directory: frontend/source
 
   docker:
     runs-on: ubuntu-latest
