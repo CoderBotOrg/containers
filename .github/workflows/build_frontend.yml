@@ -58,16 +58,3 @@ jobs:
         image-name: frontend # Provide only Docker image name, tag will be automatically set to latest
         dockerfile: frontend/Dockerfile
         build-context: frontend
-
-  release-backend:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-    - uses: actions/checkout@v2 # Checking out the repo
-    - name: Build and Publish backend container image
-      uses: VaultVulp/gp-docker-action@1.2.0
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
-        image-name: backend # Provide only Docker image name, tag will be automatically set to latest
-        dockerfile: backend/Dockerfile
-        build-context: backend
