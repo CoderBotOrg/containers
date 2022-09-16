@@ -30,6 +30,6 @@ jobs:
       with:
           push: true
           platforms: linux/arm/v7
-          tags: coderbotorg/containers/backend:latest
+          tags: ghcr.io/coderbotorg/containers/backend:latest
           context: backend
 
