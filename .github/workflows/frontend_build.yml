@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        name: CoderBotOrg/frontend
+        repository: CoderBotOrg/frontend
         ref: refs/heads/main    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
