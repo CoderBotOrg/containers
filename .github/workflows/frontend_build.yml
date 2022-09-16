@@ -24,7 +24,7 @@ jobs:
       with:
         path: frontend/source
         name: CoderBotOrg/frontend
-        ref: refs/heads/master    
+        ref: refs/heads/main    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
@@ -34,16 +34,10 @@ jobs:
       working-directory: frontend/source
     - run: npm run build --if-present
       working-directory: frontend/source
-
-  docker:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' # Running this job only for master branch
-
-    steps:
-      - uses: actions/checkout@v2 # Checking out the repo
-      - name: Build and Publish latest Docker image
-        uses: VaultVulp/gp-docker-action@1.2.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
-          image-name: frontend # Provide only Docker image name, tag will be automatically set to latest
-          dockerfile: frontend/Dockerfile
+    - uses: actions/checkout@v2 # Checking out the repo
+    - name: Build and Publish latest Docker image
+      uses: VaultVulp/gp-docker-action@1.2.0
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
+        image-name: frontend # Provide only Docker image name, tag will be automatically set to latest
+        dockerfile: frontend/Dockerfile
