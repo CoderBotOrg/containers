@@ -11,7 +11,6 @@ RUN install_packages \
  unzip \
  xz-utils \
  ffmpeg \
- omxplayer \
  portaudio19-dev \
  python3 \
  python3-pip \
