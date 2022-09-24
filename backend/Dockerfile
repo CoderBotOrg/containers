@@ -40,15 +40,15 @@ RUN install_packages \
  tesseract-ocr-spa \
  tesseract-ocr-deu
 
+ENV READTHEDOCS=True
+ADD requirements_container.txt coderbot/.
+RUN pip install --no-cache-dir -r coderbot/requirements_container.txt
+
 ARG BACKEND_BRANCH=refactor_api_v3
 RUN wget https://github.com/CoderBotOrg/backend/archive/$BACKEND_BRANCH.zip && \
     unzip $BACKEND_BRANCH.zip && \
     rm $BACKEND_BRANCH.zip && \
     mv backend-$BACKEND_BRANCH coderbot
-
-ENV READTHEDOCS=True
-ADD requirements_container.txt coderbot/.
-RUN pip install --no-cache-dir -r coderbot/requirements_container.txt
 
 ADD scripts/*.sh /tmp/.
 RUN /tmp/install_generic_cnn_models.sh
