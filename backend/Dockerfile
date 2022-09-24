@@ -54,4 +54,7 @@ ADD scripts/*.sh /tmp/.
 RUN /tmp/install_generic_cnn_models.sh
 RUN /tmp/install_lib_firmware.sh
 
+ADD etc/coderbot/version /etc/coderbot/version 
+ADD etc/coderbot/update_status /etc/coderbot/update_status 
+
 ENTRYPOINT cd /coderbot && python3 main.py
