@@ -18,7 +18,8 @@ RUN install_packages \
  libtiff5 \
  libatlas-base-dev \
  libhdf5-dev \
- pulseaudio
+ pulseaudio \
+ espeak
 RUN install_packages \
  libharfbuzz-bin \
  libwebp6 \
@@ -56,6 +57,7 @@ ADD scripts/*.sh /tmp/.
 RUN /tmp/install_generic_cnn_models.sh
 RUN /tmp/install_lib_firmware.sh
 
+ADD etc/pulse/client.conf /etc/pulse/client.conf
 ADD etc/coderbot/version /etc/coderbot/version 
 ADD etc/coderbot/update_status /etc/coderbot/update_status 
 
