@@ -17,7 +17,8 @@ RUN install_packages \
  libopenjp2-7-dev \
  libtiff5 \
  libatlas-base-dev \
- libhdf5-dev
+ libhdf5-dev \
+ pulseaudio
 RUN install_packages \
  libharfbuzz-bin \
  libwebp6 \
