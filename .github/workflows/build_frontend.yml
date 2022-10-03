@@ -69,4 +69,6 @@ jobs:
           platforms: linux/arm/v7
           tags: ghcr.io/coderbotorg/containers/frontend:latest
           context: frontend
+          cache-from: type=registry,ref=ghcr.io/coderbotorg/containers/frontend:latest
+          cache-to: type=inline
 
