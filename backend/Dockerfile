@@ -18,7 +18,6 @@ RUN install_packages \
  libtiff5 \
  libatlas-base-dev \
  libhdf5-dev \
- pulseaudio \
  alsa-utils \
  espeak
 RUN install_packages \
@@ -62,4 +61,4 @@ ADD etc/pulse/client.conf /etc/pulse/client.conf
 ADD etc/coderbot/version /etc/coderbot/version 
 ADD etc/coderbot/update_status /etc/coderbot/update_status 
 
-ENTRYPOINT cd /coderbot && python3 main.py
+ENTRYPOINT cd /coderbot && python3 coderbot/main.py

@@ -39,7 +39,7 @@ spidev==3.5
 # Audio
 sox==1.4.1
 PyAudio==0.2.12
-pulsectl==22.3.2
+pyalsaaudio==0.9.2
 
 # Computer Vision
 grpcio==1.48.1
