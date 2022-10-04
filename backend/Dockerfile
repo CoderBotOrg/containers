@@ -19,6 +19,7 @@ RUN install_packages \
  libatlas-base-dev \
  libhdf5-dev \
  pulseaudio \
+ alsa-utils \
  espeak
 RUN install_packages \
  libharfbuzz-bin \
