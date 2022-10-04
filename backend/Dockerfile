@@ -48,6 +48,7 @@ ADD requirements_container.txt /tmp/.
 RUN pip install --no-cache-dir -r /tmp/requirements_container.txt
 
 ARG BACKEND_BRANCH=refactor_api_v3
+
 RUN wget https://github.com/CoderBotOrg/backend/archive/$BACKEND_BRANCH.zip && \
     unzip $BACKEND_BRANCH.zip && \
     rm $BACKEND_BRANCH.zip && \
