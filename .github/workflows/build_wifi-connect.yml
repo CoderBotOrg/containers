@@ -10,47 +10,11 @@ on:
     branches: [ main ]
 
 jobs:
-  build-frontend:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        repository: CoderBotOrg/frontend
-        ref: vite
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - name: Archive dist
-      uses: actions/upload-artifact@v3
-      with:
-        name: frontend-dist
-        path: dist
-
   release-frontend:
     runs-on: ubuntu-latest
     needs: build-frontend
     steps:
     - uses: actions/checkout@v2 # Checking out the repo
-    - name: Download dist artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: frontend-dist 
-        path: frontend/dist
-    - run: wget https://github.com/CoderBotOrg/docs/releases/download/v0.1/docs.tgz
-    - run: mkdir -p frontend/cb_docs
-    - run: tar xzf docs.tgz -C frontend/cb_docs
-    - run: rm docs.tgz
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
     - name: Set up Docker Buildx
@@ -67,8 +31,6 @@ jobs:
       with:
           push: true
           platforms: linux/arm/v7
-          tags: ghcr.io/coderbotorg/containers/frontend:latest
-          context: frontend
-          cache-from: type=registry,ref=ghcr.io/coderbotorg/containers/frontend:latest
-          cache-to: type=inline
+          tags: ghcr.io/coderbotorg/containers/wifi-connect:latest
+          context: wifi-connecy
 
