@@ -20,7 +20,8 @@ balena-engine run -d \
 --mount type=bind,source=/run/dbus,target=/host/run/dbus \
 -e DBUS_SYSTEM_BUS_ADDRESS="unix:path=/host/run/dbus/system_bus_socket" \
 -e PORTAL_LISTENING_PORT=8080 \
---cap-add NET_ADMIN coderbot/wifi-connect:4.4.6
+--cap-add NET_ADMIN \
+ghcr.io/coderbotorg/containers/wifi-connect:latest
 balena-engine run -d --name audio \
 --privileged --restart unless-stopped \
 -v pulse:/run/pulse \
