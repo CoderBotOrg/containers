@@ -3,6 +3,7 @@ FROM coderbot/rpi-debian:bullseye-20220819
 ENV QEMU_CPU=max
 ENV DEBIAN_FRONTEND=noninteractive
 
+RUN apt-get update -y
 RUN install_packages \
  libraspberrypi0 \
  procps \
