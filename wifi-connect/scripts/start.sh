@@ -21,6 +21,6 @@ export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 PORTAL_SSID=CoderBot_$(cat /sys/class/net/wlan0/address|awk '{print substr($1,1,2) substr($1,4,2)}')
 
 printf "Starting Access Point portal $PORTAL_SSID\n"
-./wifi-connect --portal-ssid $PORTAL_SSID --portal-gateway 0.0.0.0
+./wifi-connect --portal-ssid $PORTAL_SSID
 
 sleep infinity
