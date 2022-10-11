@@ -29,6 +29,7 @@ RUN install_packages \
  libavcodec-extra58 \
  libavformat58
 RUN install_packages \
+ libgtk-3-0=3.24.24-4+rpt6+deb11u2 \
  libopencv-dev \
  zbar-tools \
  libzbar0 \
