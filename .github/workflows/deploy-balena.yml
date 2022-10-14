@@ -1,0 +1,24 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: deploy-balena
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy-balena:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2 # Checking out the repo
+    - run: wget https://github.com/balena-io/balena-cli/releases/download/v14.4.1/balena-cli-v14.4.1-linux-x64-standalone.zip
+    - run: unzip balena-cli-v14.4.1-linux-x64-standalone.zip
+    - run: export PATH=$PATH:$(pwd)/balena-cli
+    - run: wget https://api.balena-cloud.com/download?deviceType=raspberrypi3&version=2.105.1+rev1&fileType=.zip&developmentMode=true&d_id=59b8434c-23e3-4335-a87e-061409aabdadR&s_id=1665783189368
+    - run: unzip raspberrypi3-2.105.1+rev1-v14.2.0.img.zip
+    - run: balena login --token $BALENA_TOKEN
+    - run: balena preload raspberrypi3-2.105.1+rev1-v14.2.0.img --fleet gh_previ/coderbot
+

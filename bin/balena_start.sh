@@ -1,5 +1,10 @@
 #!/bin/sh
-balena-engine run -d --name pigpio --network host --privileged --restart unless-stopped coderbot/alpine-pigpiod:arm32v7
+balena-engine run -d \
+--name pigpio \
+--network host \
+--privileged \
+--restart unless-stopped \
+coderbot/alpine-pigpiod:arm32v7
 balena-engine run -d \
 --name backend \
 --network host \
@@ -21,6 +26,7 @@ balena-engine run -d \
 -e DBUS_SYSTEM_BUS_ADDRESS="unix:path=/host/run/dbus/system_bus_socket" \
 -e PORTAL_LISTENING_PORT=8080 \
 --cap-add NET_ADMIN \
+
 ghcr.io/coderbotorg/containers/wifi-connect:latest
 balena-engine run -d --name audio \
 --privileged --restart unless-stopped \
