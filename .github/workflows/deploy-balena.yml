@@ -22,5 +22,12 @@ jobs:
     - run: wget "https://api.balena-cloud.com/download?deviceType=raspberrypi3&version=2.105.1+rev1&fileType=.zip&developmentMode=true&d_id=59b8434c-23e3-4335-a87e-061409aabdadR&s_id=1665783189368" -O raspberrypi3-2.105.1+rev1-v14.2.0.img.zip
     - run: unzip raspberrypi3-2.105.1+rev1-v14.2.0.img.zip
     - run: ./balena-cli/balena login --token ${{ secrets.BALENA_TOKEN }}
-    - run: ./balena-cli/balena preload raspberrypi3-2.105.1+rev1-v14.2.0.img --fleet gh_previ/coderbot
+    - run: ./balena-cli/balena preload raspberrypi3-2.105.1+rev1-v14.2.0.img --fleet gh_previ/coderbot -c current
+    - run: mkdir -p dist
+    - run: mv raspberrypi3-2.105.1+rev1-v14.2.0.img ./dist/.
+    - name: Archive dist
+      uses: actions/upload-artifact@v3
+      with:
+        name: image-preloaded
+        path: dist
 
