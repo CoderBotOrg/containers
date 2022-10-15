@@ -51,7 +51,7 @@ ARG BACKEND_BRANCH=refactor_api_v3
 RUN wget https://github.com/CoderBotOrg/backend/archive/$BACKEND_BRANCH.zip && \
     unzip $BACKEND_BRANCH.zip && \
     rm $BACKEND_BRANCH.zip && \
-    mv backend-$BACKEND_BRANCH coderbot \
+    mv backend-$BACKEND_BRANCH coderbot && \
     mv coderbot/defaults/manifest.json coderbot/manifest.json
 
 ADD scripts/*.sh /tmp/.
