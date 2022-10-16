@@ -6,8 +6,12 @@ name: build wifi-connect
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'wifi-connect/**'
   pull_request:
     branches: [ main ]
+    paths:
+      - 'wifi-connect/**'
 
 jobs:
   release-wifi-connect:

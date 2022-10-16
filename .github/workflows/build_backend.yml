@@ -6,8 +6,12 @@ name: build CoderBot backend
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'backend/**'
   pull_request:
     branches: [ main ]
+    paths:
+      - 'backend/**'
 
 jobs:
   release-backend:

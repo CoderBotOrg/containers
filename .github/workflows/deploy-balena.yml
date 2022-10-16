@@ -6,8 +6,12 @@ name: deploy-balena
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'balena/**'
   pull_request:
     branches: [ main ]
+    paths:
+      - 'balena/**'
 
 jobs:
   deploy-balena:
