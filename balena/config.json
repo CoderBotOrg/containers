@@ -1,4 +1,5 @@
 {
+    "deviceType": "raspberrypi3",
     "network": "ethernet",
     "appUpdatePollInterval": 10,
     "hostname": "coderbot",
