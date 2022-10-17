@@ -1,7 +1,7 @@
 {
     "hostname": "coderbot",
     "persistentLogging": false,
-    "country": "IT"
+    "country": "IT",
     "os": {
         "network": {
             "connectivity": {
@@ -11,6 +11,6 @@
             "wifi": {
                 "randomMacAddressScan": false
             }
-        },
+        }
     }
 }
