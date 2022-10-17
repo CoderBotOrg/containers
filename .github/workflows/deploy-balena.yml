@@ -21,7 +21,7 @@ jobs:
     - run: export PATH=$PATH:$(pwd)/balena-cli
     - run: ./balena-cli/balena --version
     - run: ./balena-cli/balena login --token ${{ secrets.BALENA_TOKEN }}
-    - run: ./balena-cli/balena os download raspberrypi3 -o raspberrypi.img --version v2.105.1+rev1.dev --output raspberrypi3.img
+    - run: ./balena-cli/balena os download raspberrypi3 --version v2.105.1+rev1.dev --output raspberrypi3.img
     - run: sudo mkdir /mnt/resin-boot
     - run: sudo mount -o loop,offset=$(( 512 * 8192)) raspberrypi3.img /mnt/resin-boot
     - run: sudo cp balena/config.txt  /mnt/resin-boot
