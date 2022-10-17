@@ -26,8 +26,8 @@ jobs:
     - run: sudo mount -o loop,offset=$(( 512 * 8192)) raspberrypi3.img /mnt/resin-boot
     - run: sudo cp balena/config.txt  /mnt/resin-boot
     - run: sudo umount  /mnt/resin-boot
-    - run: ./balena-cli/balena config generate --version v2.105.1+rev1.dev --deviceType raspberrypi3 --fleet gh_previ/coderbot --network ethernet --appUpdatePollInterval 10 -o config.json
-    - run: ./balena-cli/balena os configure raspberrypi3.img --fleet gh_previ/coderbot --dev --config config.json --config-network ethernet
+    - run: ./balena-cli/balena config generate --version v2.105.1+rev1.dev --deviceType raspberrypi3 --fleet gh_previ/coderbot --network ethernet --appUpdatePollInterval 10 --dev -o config.json
+    - run: ./balena-cli/balena os configure raspberrypi3.img --fleet gh_previ/coderbot --config config.json --config-network ethernet
     - run: sudo ./balena-cli/balena config write --drive raspberrypi3.img hostname coderbot
     - run: ./balena-cli/balena preload raspberrypi3.img --fleet gh_previ/coderbot -c current
     - run: mkdir -p dist
