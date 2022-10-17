@@ -27,8 +27,8 @@ jobs:
     - run: sudo cp balena/config.txt  /mnt/resin-boot
     - run: sudo umount  /mnt/resin-boot
     - run: ./balena-cli/balena login --token ${{ secrets.BALENA_TOKEN }}
-    - run: ./balena-cli/balena os configure raspberrypi3-2.105.1+rev1-v14.2.0.img -f gh_previ/coderbot --config balena/config.json --config-network ethernet
     - run: ./balena-cli/balena preload raspberrypi3-2.105.1+rev1-v14.2.0.img --fleet gh_previ/coderbot -c current
+    - run: ./balena-cli/balena os configure raspberrypi3-2.105.1+rev1-v14.2.0.img -f gh_previ/coderbot --config balena/config.json --config-network ethernet
     - run: mkdir -p dist
     - run: mv raspberrypi3-2.105.1+rev1-v14.2.0.img ./dist/.
     - name: Archive dist
