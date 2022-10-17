@@ -5,6 +5,7 @@
     "hostname": "coderbot",
     "persistentLogging": false,
     "country": "IT",
+    "developmentMode": true,
     "os": {
         "sshKeys": [
          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDU05JkLF4v3oEkYUUobxWdNEjVOfGhuHiN96bYWPvsnef9A6Z8dpPk4gvLL7KZ8aJ/hneYvTudZ3ohpUKtE2olX2F3ugHDFX+5KUbyVgv2RyLjjhOKQyb2fZrkT2RoB2qhIWlp09A2B9Ct73vb8JdbE1NAD7Cs+xQUKLN89n+k3OjO1Pdf2EQyjBm334XCdMV5TmVf9YQoDage8UEU0+NsGRFW3L/QQ95B5umyJHSjjil6roA2bLtq6prB2qgLGVVWrQn0diwQu0bBURMq4xyPDpJCFj12rjpsUpMCKKA48vjPwgwn7RP/D3klYJHsb/jfH5DU6X5QISrqToD6dU23qQc9I3mnpCx2DeLlqcggZwqEAz6hQrEQdlTM1TNz59RLoB1mcz9mG8uk4pvnYuPYfX2BV8PhoGWe90OFqKIEz3t+nNXpGZ3vW1Z6Bz6J9O1K+vVz2efRiTiHleRrZPg1RmrhjNAi0Bu1OdvtKCClCLT2LV7HthbDHkPTCmNF6KaDDLwg+ADEx4i8Lkg7OJ0HTc87ZDU4lbUakaSFkP1ZHxxmvVfEPGGSP+8fzW6nY1CwBfFHVhafQ513DO6IiVdUrwtx2QNmg02Nw/BtPBgj0H3d+/0lURS26b/EDzk+KFMAJ7RRU8qSXxWV8TKi2lvOr4zBpufO2KYzvReO9R0AEQ=="
