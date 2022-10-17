@@ -8,6 +8,7 @@ on:
     branches: [ main ]
     paths:
       - 'balena/**'
+      - '.github/workflow/deploy-balena.yml'
   pull_request:
     branches: [ main ]
     paths:
