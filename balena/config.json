@@ -2,4 +2,15 @@
     "hostname": "coderbot",
     "persistentLogging": false,
     "country": "IT"
+    "os": {
+        "network": {
+            "connectivity": {
+                "uri": "https://api.balena-cloud.com/connectivity-check",
+                "interval": "300"
+            },
+            "wifi": {
+                "randomMacAddressScan": false
+            }
+        },
+    }
 }
