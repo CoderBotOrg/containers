@@ -24,10 +24,10 @@ jobs:
     - run: ./balena-cli/balena --version
     - run: wget "https://api.balena-cloud.com/download?deviceType=raspberrypi3&version=2.105.1+rev1&fileType=.zip&developmentMode=true&d_id=59b8434c-23e3-4335-a87e-061409aabdadR&s_id=1665783189368" -O raspberrypi3-2.105.1+rev1-v14.2.0.img.zip
     - run: unzip raspberrypi3-2.105.1+rev1-v14.2.0.img.zip
-    - run: mkdir /mnt/resin-boot
-    - run: mount -o loop raspberrypi3-2.105.1+rev1-v14.2.0.img  /mnt/resin-boot
-    - run: cp balena/config.txt  /mnt/resin-boot
-    - run: umount  /mnt/resin-boot
+    - run: sudo mkdir /mnt/resin-boot
+    - run: sudo mount -o loop raspberrypi3-2.105.1+rev1-v14.2.0.img  /mnt/resin-boot
+    - run: sudo cp balena/config.txt  /mnt/resin-boot
+    - run: sudo umount  /mnt/resin-boot
     - run: ./balena-cli/balena login --token ${{ secrets.BALENA_TOKEN }}
     - run: ./balena-cli/balena os configure raspberrypi3-2.105.1+rev1-v14.2.0.img -f gh_previ/coderbot --device-type raspberrypi3 --config balena/config.json
     - run: ./balena-cli/balena preload raspberrypi3-2.105.1+rev1-v14.2.0.img --fleet gh_previ/coderbot -c current
