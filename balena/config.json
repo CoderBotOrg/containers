@@ -1,4 +1,6 @@
 {
+    "network": "ethernet",
+    "appUpdatePollInterval": 10,
     "hostname": "coderbot",
     "persistentLogging": false,
     "country": "IT"
