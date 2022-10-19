@@ -18,8 +18,7 @@ export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 
 # 3. Is there Internet connectivity via a google ping?
 # wget --spider http://google.com 2>&1
-ip link show wlan0
-export PORTAL_SSID=CoderBot_$(ip link show wlan0|grep link|awk '{print substr($2,13,2) substr($2,16,2)}')
+export PORTAL_SSID=CoderBot_$(cat /proc/cpuinfo|grep Serial|awk '{print substr($3, 13, 4)}')
 export PORTAL_PASSPHRASE=coderbot
 
 printf "Starting Access Point portal $PORTAL_SSID\n"
