@@ -21,6 +21,7 @@ jobs:
       with:
         balena_token: ${{ secrets.BALENA_TOKEN }}
         fleet: gh_previ/coderbot
+        registry_secrets: ${{ secrets.GHCR_CREDS }}
         source: balena
     - name: Log release ID built
       run: echo "Built release ID ${{ steps.build.outputs.release_id }}"
