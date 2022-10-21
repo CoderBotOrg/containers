@@ -15,6 +15,17 @@ jobs:
   deploy-balena:
     runs-on: ubuntu-latest
     steps:
+    - uses: balena-io/deploy-to-balena-action@master
+      id: build
+      with:
+        balena_token: ${{ secrets.BALENA_TOKEN }}
+        fleet: gh_previ/coderbot
+        source: ./release/.
+    - name: Log release ID built
+      run: echo "Built release ID ${{ steps.build.outputs.release_id }}"
+  build-balena:
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v2 # Checking out the repo
     - run: wget https://github.com/balena-io/balena-cli/releases/download/v14.4.1/balena-cli-v14.4.1-linux-x64-standalone.zip -O balena-cli-v14.4.1-linux-x64-standalone.zip
     - run: unzip balena-cli-v14.4.1-linux-x64-standalone.zip
