@@ -1,13 +1,13 @@
 version: '2'
 services:
   frontend:
-    image: ghcr.io/coderbotorg/frontend:git-c186128
+    image: ghcr.io/coderbotorg/frontend:git-49ccf70
     restart: unless-stopped
     network_mode: host
     privileged: true
 
   backend:
-    image: ghcr.io/coderbotorg/backend:git-561d1fe
+    image: ghcr.io/coderbotorg/backend:git-cd07d87
     restart: unless-stopped
     network_mode: host
     privileged: true
@@ -15,7 +15,6 @@ services:
       - pigpio
     volumes:
       - "data:/coderbot/data"
-      - "logs:/coderbot/logs"
 
   wifi-py:
     image: ghcr.io/coderbotorg/python-wifi-connect:0.0.11
