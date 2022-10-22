@@ -1,13 +1,13 @@
 version: '2'
 services:
   frontend:
-    image: ghcr.io/coderbotorg/frontend:git-49ccf70
+    image: ghcr.io/coderbotorg/frontend:git-1452a77
     restart: unless-stopped
     network_mode: host
     privileged: true
 
   backend:
-    image: ghcr.io/coderbotorg/backend:git-cd07d87
+    image: ghcr.io/coderbotorg/backend:git-1f72632
     restart: unless-stopped
     network_mode: host
     privileged: true
